@@ -1,38 +1,89 @@
 .App {
   text-align: center;
+  margin-top: 50px;
+  padding: 0 20px; /* Add some padding for mobile screens */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%; /* Make input take full width */
+  max-width: 300px; /* Limit the maximum width */
+  box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-left: 10px;
+  margin-top: 10px; /* Add margin to the top for better spacing on mobile */
+  width: 100%; /* Make button take full width */
+  max-width: 300px; /* Limit the maximum width */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+p {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* Additional styles for react-autosuggest */
+.react-autosuggest__container {
+  position: relative;
+}
+
+.react-autosuggest__input {
+  width: 100%; /* Make input take full width */
+  padding: 10px;
+  font-size: 16px;
+  max-width: 300px; /* Limit the maximum width */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.react-autosuggest__suggestions-container {
+  display: none;
+  position: absolute;
+  top: 51px;
+  width: 100%; /* Make suggestions take full width */
+  max-width: 300px; /* Limit the maximum width */
+  border: 1px solid #aaa;
+  background-color: #fff;
+  font-size: 16px;
+  z-index: 2;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.react-autosuggest__suggestions-container--open {
+  display: block;
+}
+
+.react-autosuggest__suggestions-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.react-autosuggest__suggestion {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.react-autosuggest__suggestion--highlighted {
+  background-color: #ddd;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .App {
+    margin-top: 20px;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  input, button {
+    max-width: 100%; /* Remove the maximum width for smaller screens */
   }
-  to {
-    transform: rotate(360deg);
+
+  .react-autosuggest__input, .react-autosuggest__suggestions-container {
+    max-width: 100%; /* Remove the maximum width for smaller screens */
   }
 }
